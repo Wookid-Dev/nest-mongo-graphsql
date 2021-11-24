@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    container_name: test
+    restart: always
+    build: .
+    ports:
+      - '8080:3000'
+    links: 
+      - mongodb
+  mongodb:
+    container_name: mongoTest
+    image: mongo
+    ports:
+      - '27017:27017'
